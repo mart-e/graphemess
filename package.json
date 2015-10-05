@@ -1,0 +1,11 @@
+{
+  "name": "graphemess",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "stylus": "*",
+    "body-parser": "*"
+  }
+}

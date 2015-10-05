@@ -1,0 +1,44 @@
+extend layout
+block content
+
+  pre
+    code#error_area.status_area
+    code#success_area.status_area
+
+  #result.u-full-width
+
+  form(method='POST', action='/push')
+
+    label(for='name') Name
+    if notetoken
+      input#notetoken(
+        type="hidden"
+        value="#{notetoken}"
+      )
+    else
+      input#notetoken(
+        type="hidden"
+      )
+    if notename
+      input#notename.u-full-width(
+        name="name"
+        value="#{notename}"
+      )
+    else
+      input#notename.u-full-width(
+        name="name"
+      )
+
+    label(for='notearea') Content
+    textarea#notearea.u-full-width(
+      name="notearea"
+    ) #{content}
+
+    button#sendnote.button-primary(
+      value="Submit"
+      type="submit"
+    ) Save
+
+block sidebar
+  h3 List of notes
+  ul#notelist

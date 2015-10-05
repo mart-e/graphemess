@@ -1,0 +1,27 @@
+doctype
+html
+  head
+    title #{title}
+    link(rel="stylesheet", href="/style/skeleton/normalize.css")
+    link(rel="stylesheet", href="/style/skeleton/skeleton.css")
+    link(rel='stylesheet', href='/style/custom.css')
+  body
+    header
+      h1 #{title}
+    .container
+      .row
+        .three.columns.sidebar
+          block sidebar
+        .nine.columns.content
+          block content
+
+    footer
+      p Running on node with Express, Jade and Stylus
+      script(
+        type='text/javascript'
+        src='/js/main.js'
+      )
+      script(
+        type='text/javascript'
+        src='https://cdnjs.cloudflare.com/ajax/libs/showdown/1.2.3/showdown.min.js'
+      )

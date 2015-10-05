@@ -1,3 +1,6 @@
+# local data
+storage
+
 # Logs
 logs
 *.log

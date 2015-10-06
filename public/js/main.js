@@ -57,13 +57,6 @@ function processSubmitNote(submitted, response) {
     hide("error_area")
     document.getElementById("success_area").innerHTML = response.id + " saved!"
 
-    var converter = new showdown.Converter()
-    var text      = submitted.notearea
-    var html      = converter.makeHtml(text)
-
-    show("result")
-    document.getElementById("result").innerHTML = html
-
     updateNoteList({token: response.id, name: response.name})
   }
 }

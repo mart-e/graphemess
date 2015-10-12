@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "private": "true",
   "dependencies": {
+    "async": "*",
+    "body-parser": "*",
     "express": "*",
     "jade": "*",
-    "stylus": "*",
-    "body-parser": "*"
+    "stylus": "*"
   }
 }

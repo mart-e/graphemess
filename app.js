@@ -7,9 +7,13 @@ var express = require('express')
 
 var app = express()
 
+// I have no other purpose than making you hope this will be configurable one day
+var storage = 'file'
+var Store = require('./lib/storage/' + storage);
+
 var Notes = require('./lib/notes')
 var note = new Notes({
-  path: 'storage'
+  store: new Store({path: 'storage'}),
 })
 
 app.set('views', __dirname + '/views')

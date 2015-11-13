@@ -1,3 +1,5 @@
+"use strict"
+
 function show(element) {
   // display an hidden element giving its id
   var e = document.getElementById(element)
@@ -71,7 +73,7 @@ function updateNoteList(newNote) {
   localStorage.setItem('NotesList', JSON.stringify(notesList))
 
   document.getElementById("notelist").innerHTML = ""
-  for (key in notesList) {
+  for (var key in notesList) {
     var li = tag('li', {'id': key})
     var a = tag('a', {'href': '/'+key})
     a.textContent = notesList[key]
@@ -94,10 +96,10 @@ document.getElementById("sendnote").addEventListener("click", function(e) {
   var token = document.getElementById("notetoken").value
   var noteData = {'name': name, 'notearea': content, 'token': token}
   r.onreadystatechange = function () {
-    if (r.readyState != 4 || r.status != 200)
+    if (r.readyState !== 4 || r.status !== 200)
       return
     // store it or handle error
-    responseData = JSON.parse(r.responseText)
+    var responseData = JSON.parse(r.responseText)
     processSubmitNote(noteData, responseData)
   }
 

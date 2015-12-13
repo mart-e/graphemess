@@ -1,5 +1,3 @@
-"use strict"
-
 /*
  * Module dependencies
  */
@@ -37,7 +35,7 @@ app.post('/push', function (req, res) {
 })
 
 app.get('/:id', function (req, res) {
-  var note_data = note.handleGet(req, res)
+  note.handleGet(req, res)
 })
 
 

@@ -74,10 +74,10 @@ function updateNoteList(newNote) {
 
   document.getElementById("notelist").innerHTML = ""
   for (var key in notesList) {
-    var li = tag('li', {'id': key})
-    var a = tag('a', {'href': '/'+key})
-    a.textContent = notesList[key]
-    li.appendChild(a)
+    let li = tag('li', {'id': key})
+    let link = tag('a', {'href': '/'+key})
+    link.textContent = notesList[key]
+    li.appendChild(link)
     document.getElementById("notelist").appendChild(li)
   }
 }

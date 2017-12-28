@@ -2,8 +2,10 @@
  * Module dependencies
  */
 var express = require('express')
+  , logger = require('morgan')
   , stylus = require('stylus')
   , bodyParser = require('body-parser')
+  , template = require('pug')
 
 var app = express()
 
@@ -17,7 +19,7 @@ var note = new Notes({
 })
 
 app.set('views', __dirname + '/views')
-app.set('view engine', 'jade')
+app.set('view engine', 'pug')
 
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(bodyParser.json()) // for parsing application/json

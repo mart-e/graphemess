@@ -1,12 +1,23 @@
 {
   "name": "graphemess",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": "true",
+  "homepage": "https://github.com/mart-e/graphemess",
   "dependencies": {
-    "async": "*",
-    "body-parser": "*",
-    "express": "*",
-    "jade": "*",
-    "stylus": "*"
+    "async": "^2.6.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.14.3",
+    "pug": "*",
+    "stylus": "^0.54.5"
+  },
+  "scripts": {
+    "build-css": "stylus source/stylesheets/index.styl -o static/css",
+    "watch-css": "stylus source/stylesheets/index.styl -o static/css -w",
+    "clean": "rm -rf static/css && mkdir -p static/css",
+    "build": "npm run clean && npm run build-css",
+    "watch": "npm run clean && npm run watch-css & nodemon app -e js,jade",
+    "start": "node app"
   }
 }
